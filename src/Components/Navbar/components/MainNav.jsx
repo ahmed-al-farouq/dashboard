@@ -11,13 +11,15 @@ import { toggleNavbar } from '../../../redux/action';
 import { useSelector } from 'react-redux';
 
 const MainNav = (props) => {
-    const navbarIsOpened  = useSelector(state => state.navbarIsOpened)
+    const navbarIsOpened  = useSelector(state => state.navbarIsOpened);
     const toggle = () => {
-        props.toggle()
-        navbarIsOpened ?
-            props.dispatch(toggleNavbar(false)) 
-            :
-            props.dispatch(toggleNavbar(true)) 
+        if (window.innerWidth < 767.99) {
+            props.toggle()
+            navbarIsOpened ?
+                props.dispatch(toggleNavbar(false)) 
+                :
+                props.dispatch(toggleNavbar(true))
+        }
     } 
     return (
         <ul className={`nav nav-pills flex-column fs-6 mt-4 align-self-center ${props.class}`} ref={props.navRef}>

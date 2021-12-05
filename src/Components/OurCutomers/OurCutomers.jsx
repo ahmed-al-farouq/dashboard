@@ -1,11 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-function OurCutomers() {
-    return (
-        <div>
-            OurCutomers
-        </div>
-    )
-}
+const OurCutomers = () => (
+  <div>
+    OurCutomers
+  </div>
+);
 
-export default OurCutomers
+export default OurCutomers;

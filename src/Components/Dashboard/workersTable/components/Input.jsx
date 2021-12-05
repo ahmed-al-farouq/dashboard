@@ -1,15 +1,20 @@
-import React from 'react'
-import {  Field, ErrorMessage } from "formik";
+import React from 'react';
+import Proptypes from 'prop-types';
+import { Field, ErrorMessage } from 'formik';
 
-function Input(props) {
-    return (
-        <div className="form-control d-flex flex-column">
-            <label className="mb-1" htmlFor={props.name}>{props.label}</label>
-            <Field type={props.type} id={props.name} name={props.name}/>
-            <ErrorMessage component="span" className="error" name={props.name}/>
-        </div>
-    )
+function Input({ name, label, type }) {
+  return (
+    <div className="form-control d-flex flex-column">
+      <label className="mb-1" htmlFor={name}>{label}</label>
+      <Field type={type} id={name} name={name} />
+      <ErrorMessage component="span" className="error" name={name} />
+    </div>
+  );
 }
 
-export default Input
-
+Input.propTypes = {
+  name: Proptypes.string.isRequired,
+  label: Proptypes.string.isRequired,
+  type: Proptypes.string.isRequired,
+};
+export default Input;
