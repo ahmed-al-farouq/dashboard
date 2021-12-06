@@ -1,61 +1,49 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useRef } from 'react';
+import { useRef, memo } from 'react';
 // Icons
 import { BiWorld } from 'react-icons/bi';
 // Router
 import { Link } from 'react-router-dom';
-// Redux
-import { useDispatch } from 'react-redux';
 // Components
 import TogglerIcon from './components/TogglerIcon';
-import CloseNav from './components/CloseNav';
+import ClosedNav from './components/closedNav';
 import MainNav from './components/MainNav';
 
 const SideNavbar = () => {
-  const dispatch = useDispatch();
-  // Refs
   const navbarRef = useRef();
   const navRef = useRef();
-  const closeNavRef = useRef();
+  const closedNavRef = useRef();
   const logoRef = useRef();
   // Toggle Navbar
   const navbarToggle = () => {
     navbarRef.current.classList.toggle('close');
+    navbarRef.current.classList.toggle('col-xl-2');
+    navbarRef.current.classList.toggle('col-lg-3');
+    navbarRef.current.classList.toggle('col-md-4');
+    navbarRef.current.classList.toggle('col-sm-4');
+    navbarRef.current.classList.toggle('col-12');
     navRef.current.classList.toggle('hidden');
     navRef.current.classList.toggle('d-none');
-    closeNavRef.current.classList.toggle('hidden');
+    closedNavRef.current.classList.toggle('hidden');
     logoRef.current.classList.toggle('hidden');
   };
   return (
-  // window.innerWidth > 767.99 ?
-    <nav className="bg-light navbar-light d-flex flex-column align-items-center px-1 py-5 col-xl-2 col-lg-3 col-md-4 col-sm-4 col-12" ref={navbarRef}>
-      <TogglerIcon dispatch={dispatch} navbarToggle={navbarToggle} />
+    <nav
+      className="bg-light navbar-light d-flex flex-column
+      align-items-center px-1 py-5 col-sm-1 col-2 close"
+      ref={navbarRef}
+    >
+      <TogglerIcon navbarToggle={navbarToggle} />
       <div className="navbar-logo d-flex align-items-center justify-content-center" ref={logoRef}>
         <BiWorld />
         <Link to="/" clLinkssName="mb-0 mx-1">
           ALFAROUQ
         </Link>
       </div>
-      <MainNav navRef={navRef} />
-      <CloseNav closeNavRef={closeNavRef} hiddenClass="hidden" />
+      <MainNav navRef={navRef} hiddenClass="hidden d-none" navbarToggle={navbarToggle} />
+      <ClosedNav closedNavRef={closedNavRef} />
     </nav>
-  // :
-  // <nav
-  //    className="bg-light navbar-light d-flex flex-column align-items-center px-1 py-5 close"
-  //     ref={navbarRef}>
-  //     <TogglerIcon dispatch={dispatch} navbarToggle={navbarToggle}/>
-  //     <div
-  //        className='navbar-logo d-flex align-items-center justify-content-center hidden'
-  //         ref={logoRef}>
-  //         <BiWorld/>
-  //         <Link to="/" className="mb-0 mx-1">
-  //             ALFAROUQ
-  //         </Link>
-  //     </div>
-  //     <MainNav navRef={navRef} class="hidden d-none" toggle={navbarToggle} dispatch={dispatch}/>
-  //     <CloseNav closeNavRef={closeNavRef} class=""/>
-  // </nav>
   );
 };
 
-export default SideNavbar;
+export default memo(SideNavbar);

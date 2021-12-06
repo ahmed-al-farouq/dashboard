@@ -27,12 +27,9 @@ const Card = ({
 Card.propTypes = {
   title: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
-  icon: PropTypes.element,
+  icon: PropTypes.element.isRequired,
   increasementPercent: PropTypes.string.isRequired,
   time: PropTypes.string.isRequired,
 };
 
-Card.defaultProps = {
-  icon: '',
-};
 export default Card;

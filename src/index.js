@@ -6,20 +6,20 @@ import './css/index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // Redux
 import { Provider } from 'react-redux';
-import { persistor, store } from '../src/redux/store'
 import { PersistGate } from 'redux-persist/integration/react';
+import { persistor, store } from './redux/store';
 // App.js
 import App from './App';
 
 ReactDOM.render(
-  <React.StrictMode>  
+  <React.StrictMode>
     <Provider store={store}>
       <PersistGate persistor={persistor}>
         <App />
       </PersistGate>
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 /*
@@ -34,8 +34,8 @@ ReactDOM.render(
 
     => Components
         * Header
-          >>> Avatar 
-          >>> message icon 
+          >>> Avatar
+          >>> message icon
           >>> Notifications icon
         * Side Navbar
         * Footer
@@ -118,11 +118,11 @@ ReactDOM.render(
           >>> Salary
           >>> Start Date
           >>> Status --> Full Time
-      // 404 Page 
+      // 404 Page
         * 404 Page Is Not Found With  Electric Effect & Clip Property
       // Log In Pages
         * Form
-          >>> Name 
+          >>> Name
           >>> Email
           >>> Password
         * Text --> If You do not have an account yet. You have to call support

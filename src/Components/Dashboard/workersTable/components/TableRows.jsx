@@ -53,7 +53,7 @@ function TableRows() {
         {worker.age}
       </td>
       <td className="p-2">
-        {worker.start_date}
+        {worker.startDate}
       </td>
       <td className="p-2">
         {worker.salary}

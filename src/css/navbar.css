@@ -1,8 +1,12 @@
 nav {
   position: relative;
-  width: inherit;
   transition: 0.5s;
   color: black;
+}
+
+nav > div,
+nav > ul {
+  position: fixed;
 }
 
 nav .navbar-toggler {
@@ -11,11 +15,10 @@ nav .navbar-toggler {
 
 nav .close-icon {
   cursor: pointer;
-  position: absolute;
-  right: 10px;
+  left: 30px;
   top: 13px;
   font-size: 22px;
-  color: rgb(202, 199, 199) !important;
+  color: rgb(202, 199, 199);
 }
 
 nav .navbar-logo a,
@@ -56,10 +59,15 @@ nav.close {
   padding: 0 !important;
 }
 
+nav.close .navbar-logo {
+  display: none !important;
+}
+
 nav.close .navbar-toggler {
   display: block;
   opacity: 1;
   visibility: visible;
+  outline: none;
   border: none;
   margin: 15px 0 0 0 !important;
   align-self: center;
@@ -71,10 +79,13 @@ nav.close .navbar-toggler {
 nav.close .close-icon {
   transition: 0.5s;
   opacity: 0;
-  visibility: hidden;
 }
 
-nav.close .nav.close .nav-item .nav-link svg {
+nav.close .nav.closen-nav {
+  top: 50px;
+}
+
+nav.close .nav.closen-nav .nav-item .nav-link svg {
   font-size: 22px;
   margin: 15px 0;
 }
@@ -82,5 +93,6 @@ nav.close .nav.close .nav-item .nav-link svg {
 @media screen and (max-width: 575.99px) {
   nav .close-icon {
     top: 10px;
+    left: 90%;
   }
 }

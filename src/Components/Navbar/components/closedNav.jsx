@@ -6,8 +6,8 @@ import { BsFillPeopleFill } from 'react-icons/bs';
 import { CgProfile } from 'react-icons/cg';
 import { BiLogOut } from 'react-icons/bi';
 
-const CloseNav = ({ hiddenClass, closeNavRef }) => (
-  <ul className={`nav flex-column close align-self-center${hiddenClass}`} ref={closeNavRef}>
+const CloseNav = ({ closedNavRef }) => (
+  <ul className="nav flex-column closen-nav" ref={closedNavRef}>
     <li className="nav-item">
       <a href="/" className="nav-link">
         <AiFillDashboard title="Dashboard" />
@@ -37,10 +37,9 @@ const CloseNav = ({ hiddenClass, closeNavRef }) => (
 );
 
 CloseNav.propTypes = {
-  closeNavRef: PropTypes.oneOfType([
+  closedNavRef: PropTypes.oneOfType([
     PropTypes.func, PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
   ]).isRequired,
-  hiddenClass: PropTypes.string.isRequired,
 };
 
 export default CloseNav;
