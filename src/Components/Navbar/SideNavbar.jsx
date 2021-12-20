@@ -25,7 +25,7 @@ const SideNavbar = () => {
     navRef.current.classList.toggle('hidden');
     navRef.current.classList.toggle('d-none');
     closedNavRef.current.classList.toggle('hidden');
-    logoRef.current.classList.toggle('hidden');
+    closedNavRef.current.classList.toggle('d-none');
   };
   return (
     <nav
@@ -35,8 +35,8 @@ const SideNavbar = () => {
     >
       <TogglerIcon navbarToggle={navbarToggle} />
       <div className="navbar-logo d-flex align-items-center justify-content-center" ref={logoRef}>
-        <BiWorld />
-        <Link to="/" clLinkssName="mb-0 mx-1">
+        <Link to="/" clLinkssName="mb-0 mx-1" onClick={navbarToggle}>
+          <BiWorld />
           ALFAROUQ
         </Link>
       </div>

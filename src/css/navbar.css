@@ -21,9 +21,14 @@ nav .close-icon {
   color: rgb(202, 199, 199);
 }
 
+nav .navbar-logo {
+  top: 80px;
+}
+
 nav .navbar-logo a,
 nav .navbar-logo svg {
   letter-spacing: 2px;
+  margin-bottom: 5px;
   color: #007bff;
   font-size: 25px;
   font-weight: 600;
@@ -33,6 +38,7 @@ nav .navbar-logo svg {
 
 nav .nav {
   transition: 0.2s;
+  top: 110px;
 }
 
 nav .nav .nav-item a,
@@ -45,6 +51,11 @@ nav .nav .nav-item svg {
   transition: 0.5s;
 }
 
+nav .nav .nav-item a.active,
+nav .nav .nav-item a.active svg {
+  color: rgba(0, 0, 0, 0.8) !important;
+}
+
 nav .nav .nav-item svg {
   font-size: 22px !important;
   margin-right: 10px;
@@ -52,7 +63,7 @@ nav .nav .nav-item svg {
 
 nav .nav .nav-item:hover a,
 nav .nav .nav-item:hover svg {
-  color: rgba(0, 0, 0, 0.774) !important;
+  color: rgba(0, 0, 0, 0.7) !important;
 }
 
 nav.close {

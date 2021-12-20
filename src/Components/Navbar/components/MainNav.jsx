@@ -2,7 +2,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Proptypes from 'prop-types';
 // Router
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 // Icons
 import { AiFillDashboard, AiFillProject } from 'react-icons/ai';
 import { BsFillPeopleFill } from 'react-icons/bs';
@@ -16,88 +16,53 @@ const MainNav = ({
     <li
       className="nav-item my-2"
     >
-      <div
-        onClick={navbarToggle}
-        onKeyPress={navbarToggle}
-        role="button"
-        tabIndex="0"
-      >
-        <Link to="/">
-          <AiFillDashboard />
-        </Link>
-        <Link to="/">
-          Dashboard
-        </Link>
-      </div>
+      <NavLink to="/" activeClassName="active" onClick={navbarToggle}>
+        <AiFillDashboard />
+      </NavLink>
+      <NavLink to="/" activeClassName="active" onClick={navbarToggle}>
+        Dashboard
+      </NavLink>
     </li>
     <li
       className="nav-item my-2"
     >
-      <div
-        onClick={navbarToggle}
-        onKeyPress={navbarToggle}
-        role="button"
-        tabIndex="0"
-      >
-        <Link to="/projects">
-          <AiFillProject />
-        </Link>
-        <Link to="/projects">
-          Projects
-        </Link>
-      </div>
+      <NavLink to="/projects" activeClassName="active" onClick={navbarToggle}>
+        <AiFillProject />
+      </NavLink>
+      <NavLink to="/projects" activeClassName="active" onClick={navbarToggle}>
+        Projects
+      </NavLink>
     </li>
     <li
       className="nav-item my-2"
     >
-      <div
-        onClick={navbarToggle}
-        onKeyPress={navbarToggle}
-        role="button"
-        tabIndex="0"
-      >
-        <Link to="/our-customers">
-          <BsFillPeopleFill />
-        </Link>
-        <Link to="/our-customers">
-          Our Cutomers
-        </Link>
-      </div>
+      <NavLink to="/our-customers" activeClassName="active" onClick={navbarToggle}>
+        <BsFillPeopleFill />
+      </NavLink>
+      <NavLink to="/our-customers" activeClassName="active" onClick={navbarToggle}>
+        Our Cutomers
+      </NavLink>
     </li>
     <li
       className="nav-item my-2"
     >
-      <div
-        onClick={navbarToggle}
-        onKeyPress={navbarToggle}
-        role="button"
-        tabIndex="0"
-      >
-        <Link to="/profile">
-          <CgProfile />
-        </Link>
-        <Link to="/profile">
-          Profile
-        </Link>
-      </div>
+      <NavLink to="/profile" activeClassName="active" onClick={navbarToggle}>
+        <CgProfile />
+      </NavLink>
+      <NavLink to="/profile" activeClassName="active" onClick={navbarToggle}>
+        Profile
+      </NavLink>
     </li>
     <hr />
     <li
       className="nav-item my-2"
     >
-      <div
-        onClick={navbarToggle}
-        onKeyPress={navbarToggle}
-        role="button"
-        tabIndex="0"
-      >
-        <Link to="/login">
-          <BiLogOut />
-        </Link>
-        <Link to="/login">
-          Log-Out
-        </Link>
-      </div>
+      <NavLink to="/login" activeClassName="active" onClick={navbarToggle}>
+        <BiLogOut />
+      </NavLink>
+      <NavLink to="/login" activeClassName="active" onClick={navbarToggle}>
+        Log-Out
+      </NavLink>
     </li>
   </ul>
 );

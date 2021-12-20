@@ -45,10 +45,6 @@
 /* End Charts */
 
 /* Start Workers Table */
-.workers-table {
-  overflow-x: scroll;
-}
-
 .workers-table table {
   min-height: 250px;
 }
@@ -80,10 +76,11 @@
 @media screen and (max-width: 991.99px) {
   .workers-table {
     text-align: center;
+    overflow-x: scroll;
   }
 
   .workers-table h2 {
-    width: 132px;
+    width: 175px;
   }
 
   .workers-table .btn {

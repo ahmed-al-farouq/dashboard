@@ -1,7 +1,8 @@
 import './css/App.css';
 // Router
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // Components
+import React from 'react';
 import SideNavbar from './Components/Navbar/SideNavbar';
 import Header from './Components/Header';
 import Dashboard from './Components/Dashboard/Dashboard';
@@ -9,6 +10,7 @@ import Projects from './Components/Projects/Projects';
 import OurCutomers from './Components/OurCutomers/OurCutomers';
 import Profile from './Components/Profile/Profile';
 import Footer from './Components/Footer';
+import NotFound from './Components/NotFound';
 
 function App() {
   return (
@@ -17,12 +19,13 @@ function App() {
         <SideNavbar />
         <div className="col-sm-11 col-10">
           <Header />
-          <Switch>
-            <Route exact path="/" component={Dashboard} />
-            <Route path="/projects" component={Projects} />
-            <Route path="/our-customers" component={OurCutomers} />
-            <Route path="/profile" component={Profile} />
-          </Switch>
+          <Routes>
+            <Route exact path="/" element={<Dashboard />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/our-customers" element={<OurCutomers />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
           <Footer />
         </div>
       </div>

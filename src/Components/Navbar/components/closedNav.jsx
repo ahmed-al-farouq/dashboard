@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 // Icons
 import { AiFillDashboard, AiFillProject } from 'react-icons/ai';
 import { BsFillPeopleFill } from 'react-icons/bs';
@@ -9,29 +10,29 @@ import { BiLogOut } from 'react-icons/bi';
 const CloseNav = ({ closedNavRef }) => (
   <ul className="nav flex-column closen-nav" ref={closedNavRef}>
     <li className="nav-item">
-      <a href="/" className="nav-link">
+      <NavLink to="/" className="nav-link" activeClassName="active">
         <AiFillDashboard title="Dashboard" />
-      </a>
+      </NavLink>
     </li>
     <li className="nav-item">
-      <a href="/projects" className="nav-link">
+      <NavLink to="/projects" className="nav-link" activeClassName="active">
         <AiFillProject title="Projects" />
-      </a>
+      </NavLink>
     </li>
     <li className="nav-item">
-      <a href="/our-customers" className="nav-link">
+      <NavLink to="/our-customers" className="nav-link" activeClassName="active">
         <BsFillPeopleFill title="Our Cutomers" />
-      </a>
+      </NavLink>
     </li>
     <li className="nav-item">
-      <a href="/profile" className="nav-link">
+      <NavLink to="/profile" className="nav-link" activeClassName="active">
         <CgProfile title="Profile" />
-      </a>
+      </NavLink>
     </li>
     <li className="nav-item">
-      <a href="/login" className="nav-link">
+      <NavLink to="/login" className="nav-link" activeClassName="active">
         <BiLogOut title="Log-Out" />
-      </a>
+      </NavLink>
     </li>
   </ul>
 );
