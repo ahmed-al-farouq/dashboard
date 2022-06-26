@@ -7,10 +7,10 @@ import { IoSettingsOutline, IoChatbubblesOutline, IoNotificationsOutline } from 
 import avatar from '../images/avatar.jpg';
 
 function Header() {
-  const infoRef = useRef();
-  const handleHover = () => {
-    infoRef.current.classList.toggle('hidden');
-  };
+  const infoRef = useRef<HTMLDivElement>(document.createElement("div"));
+
+  const handleHover = () => infoRef.current.classList.toggle('hidden');
+  
   return (
     <div className="header bg-primary p-sm-5 p-3">
       <div className="icons">

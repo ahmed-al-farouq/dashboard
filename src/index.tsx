@@ -6,24 +6,21 @@ import './css/index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // Redux
 import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react';
-import { persistor, store } from './redux/store';
-// App.js
+import { store } from './redux/store';
+// App.jsx
 import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <PersistGate persistor={persistor}>
         <App />
-      </PersistGate>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
 
 /*
-  ==> Dashboard For Tech Company Which Make Websites
+  ==> A dashboard for a tech company that makes websites
     => Pages
       // Dashboard
       // Projects
@@ -70,7 +67,6 @@ ReactDOM.render(
                 /* Start Date
                 /* Salary
                 /* Status
-          * Add New
         ** Table Of Current Projects
             >>> Project Name
             >>> Who Works On It
@@ -79,7 +75,6 @@ ReactDOM.render(
             >>> Price
             >>> Action
               --> Delete Or Change Details
-          * Add New
       // Projects Page
         * Header
         * Table Of All Projects

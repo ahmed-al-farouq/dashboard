@@ -156,3 +156,16 @@ a {
 }
 
 /* End Header */
+
+/* Start Footer */
+footer {
+  margin: 20px 0 0 0;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 18px;
+  color: #fff;
+  margin: 0;
+}

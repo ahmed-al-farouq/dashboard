@@ -1,3 +1,4 @@
+import React from 'react';
 import './css/App.css';
 // Router
 import { BrowserRouter, Route, Switch } from 'react-router-dom';

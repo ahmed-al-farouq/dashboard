@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 // Form
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
@@ -7,11 +6,24 @@ import * as Yup from 'yup';
 import { AiFillCloseCircle } from 'react-icons/ai';
 // Redux
 import { useDispatch } from 'react-redux';
-import { addWorker } from '../../../../redux/action';
 // Components
-import Input from './Input';
+import Input from '../../Input';
 
-function AddEmployeesForm({ formRef, toggleForm }) {
+interface EmployeesForm {
+  formRef: HTMLFormElement;
+  toggleForm(): void;
+}
+
+interface FormValues {
+  name: string;
+  position: string;
+  age: string;
+  start_date: string;
+  salary: string;
+  status: string;
+}
+
+function AddEmployeesForm({ formRef, toggleForm }:EmployeesForm) {
   const dispatch = useDispatch();
   const initValues = {
     name: '',
@@ -24,25 +36,14 @@ function AddEmployeesForm({ formRef, toggleForm }) {
   const validation = Yup.object({
     name: Yup.string().trim('Remove Start And End Spaces').matches(/[a-z]/gi, 'It Takes Only Letters').required('Name Is Required'),
     position: Yup.string().trim('Remove Start And End Spaces').matches(/[a-z]/gi, 'It Takes Only Letters').required('Position Is Required'),
-    age: Yup.number('It Must Be A Number').positive('It Must Be A Positive Number').min(20, 'The Age Can Not Be Lower Than 20').max(50, 'The Age Can Not Be Larger Than 50')
+    age: Yup.number().positive('It Must Be A Positive Number').min(20, 'The Age Can Not Be Lower Than 20').max(50, 'The Age Can Not Be Larger Than 50')
       .required('Age Is Required'),
-    start_date: Yup.date('Date Must Be Like That Sat Jul 17 2021').required('Date Is Required'),
-    salary: Yup.number('It Must Be A Number').positive('It Must Be A Positive Number').min(3000, 'It Can Not Be Under 3000').max(15000, 'It Can Not Be Above 15000')
+    start_date: Yup.date().required('Date Is Required'),
+    salary: Yup.number().positive('It Must Be A Positive Number').min(3000, 'It Can Not Be Under 3000').max(15000, 'It Can Not Be Above 15000')
       .required('Salary Is Required'),
     status: Yup.string().trim('Remove Start And End Spaces').matches(/[a-z]/gi, 'It Takes Only Letters').required('Statues Is Required'),
   });
-  const onSbmit = (values) => {
-    dispatch(
-      addWorker(
-        Math.ceil(Math.random() * 1000),
-        values.name,
-        values.position,
-        values.age,
-        values.start_date,
-        values.salary,
-        values.status,
-      ),
-    );
+  const onSbmit = (values:FormValues) => {
     formRef.current.classList.toggle('hidden');
   };
   return (
@@ -50,8 +51,9 @@ function AddEmployeesForm({ formRef, toggleForm }) {
       initialValues={initValues}
       validationSchema={validation}
       onSubmit={onSbmit}
+      ref={formRef}
     >
-      <div className="pop-up-form hidden" ref={formRef}>
+      <div className="pop-up-form hidden">
         <AiFillCloseCircle onClick={toggleForm} />
         <Form>
           <Input type="text" name="name" label="Name" />
@@ -67,10 +69,4 @@ function AddEmployeesForm({ formRef, toggleForm }) {
   );
 }
 
-AddEmployeesForm.propTypes = {
-  formRef: PropTypes.oneOfType([
-    PropTypes.func, PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
-  ]).isRequired,
-  toggleForm: PropTypes.func.isRequired,
-};
 export default AddEmployeesForm;

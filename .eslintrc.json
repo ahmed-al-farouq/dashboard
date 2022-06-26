@@ -1,28 +1,50 @@
 {
-  "env": {
-    "browser": true,
-    "es6": true,
-    "jest": true
-  },
-  "parser": "@babel/eslint-parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true
     },
-    "ecmaVersion": 2018,
-    "sourceType": "module"
-  },
-  "extends": ["airbnb", "plugin:react/recommended"],
-  "plugins": ["react"],
-  "rules": {
-    "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
-    "react/react-in-jsx-scope": "off",
-    "import/no-unresolved": "off",
-    "no-shadow": "off",
-    "max-len": ["error", { "code": 200 }]
-  },
-  "ignorePatterns": [
-    "dist/",
-    "build/"
-  ]
+    "extends": [
+        "airbnb-typescript",
+        "airbnb/hooks",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:jest/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly",
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "jest"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "project": "./tsconfig.json",
+    "rules": {
+        "indent": [
+            "error",
+            "tab"
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ]
+    }
 }
