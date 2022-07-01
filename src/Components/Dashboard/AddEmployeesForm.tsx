@@ -7,7 +7,7 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 // Redux
 import { useDispatch } from 'react-redux';
 // Components
-import Input from '../../Input';
+import BaseInput from "../BaseInput";
 
 interface EmployeesForm {
   formRef: HTMLFormElement;
@@ -43,25 +43,25 @@ function AddEmployeesForm({ formRef, toggleForm }:EmployeesForm) {
       .required('Salary Is Required'),
     status: Yup.string().trim('Remove Start And End Spaces').matches(/[a-z]/gi, 'It Takes Only Letters').required('Statues Is Required'),
   });
-  const onSbmit = (values:FormValues) => {
+  const onSubmit = (values:FormValues) => {
     formRef.current.classList.toggle('hidden');
   };
   return (
     <Formik
       initialValues={initValues}
       validationSchema={validation}
-      onSubmit={onSbmit}
+      onSubmit={onSubmit}
       ref={formRef}
     >
       <div className="pop-up-form hidden">
         <AiFillCloseCircle onClick={toggleForm} />
         <Form>
-          <Input type="text" name="name" label="Name" />
-          <Input type="text" name="position" label="Position" />
-          <Input type="text" name="age" label="Age" />
-          <Input type="text" name="start_date" label="Start Date" />
-          <Input type="text" name="salary" label="Salary" />
-          <Input type="text" name="status" label="Status" />
+          <BaseInput type="text" name="name" label="Name" />
+          <BaseInput type="text" name="position" label="Position" />
+          <BaseInput type="text" name="age" label="Age" />
+          <BaseInput type="text" name="start_date" label="Start Date" />
+          <BaseInput type="text" name="salary" label="Salary" />
+          <BaseInput type="text" name="status" label="Status" />
           <button type="submit" className="btn btn-primary mt-2">Submit</button>
         </Form>
       </div>

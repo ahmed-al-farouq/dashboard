@@ -21,7 +21,7 @@ const CloseNav = React.forwardRef((props, ref: React.Ref<HTMLUListElement>) => {
       </li>
       <li className="nav-item">
         <a href="/our-customers" className="nav-link">
-          <BsFillPeopleFill title="Our Cutomers" />
+          <BsFillPeopleFill title="Our Customers" />
         </a>
       </li>
       <li className="nav-item">

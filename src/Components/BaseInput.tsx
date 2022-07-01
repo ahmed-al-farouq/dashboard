@@ -7,7 +7,7 @@ interface Props {
   type: String;
 }
 
-function Input({ name, label, type } : Props) {
+const BaseInput = ({ name, label, type } : Props) => {
   return (
     <div className="form-control d-flex flex-column">
       <label className="mb-1" htmlFor={name}>{label}</label>
@@ -16,4 +16,4 @@ function Input({ name, label, type } : Props) {
     </div>
   );
 }
-export default Input;
+export default BaseInput;

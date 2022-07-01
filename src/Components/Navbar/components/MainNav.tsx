@@ -64,7 +64,7 @@ const MainNav = React.forwardRef((
             <BsFillPeopleFill />
           </Link>
           <Link to="/our-customers">
-            Our Cutomers
+            Our Customers
           </Link>
         </div>
       </li>

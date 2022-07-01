@@ -1,4 +1,11 @@
-export const initState = {
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { Project } from "../../IFs";
+
+interface InitState {
+  projects: Project[];
+}
+
+export const initialState: InitState = {
   projects: [
     {
       id: 0,
@@ -24,44 +31,30 @@ export const initState = {
   ],
 };
 
-// const filterProjects = (state, action) => state.projects.filter((project) => project.id === action.payload.id);
+const filterProjectsSlice = (state: InitState, action: PayloadAction<Project>) => {
+  return state.projects.filter((project) => project.id === action.payload.id)
+};
 
-// const isEqual = (obj1, obj2) => {
-//   const obj1Keys = Object.keys(obj1);
-//   for (const objKey of obj1Keys) {
-//     if (obj1[objKey] !== obj2[objKey]) {
-//       return false;
-//     }
-//     return true;
-//   }
-//   return false;
-// };
+const projectsSlice = createSlice({
+  name: 'projects',
+  initialState,
+  reducers: {
+    addProject: (state, action: PayloadAction<Project>) => {
+      state.projects = [...state.projects, action.payload];
+    },
+    editProject: (state, action: PayloadAction<Project>) => {
+      const projectIndex = state.projects.findIndex((project) => project.id === action.payload.id);
+      if (projectIndex != -1) {
+        const newProjectsData = [...state.projects];
+        newProjectsData[projectIndex] = action.payload;
+        state.projects = newProjectsData;
+      }
+    },
+    deleteProject: (state, action: PayloadAction<number>) => {
+      state.projects = state.projects.filter((project) => project.id !== action.payload);
+    },
+  }
+});
 
-// export const projectsReducer = (state = initState, action) => {
-//   switch (action.type) {
-//     case projectDeleted:
-//       return {
-//         ...state,
-//         projects: state.projects.filter((project) => project.id !== action.payload.id),
-//       };
-//     case projectEdited:
-//       filterProjects(state, action).name = action.payload.name;
-//       filterProjects(state, action).position = action.payload.position;
-//       filterProjects(state, action).age = action.payload.age;
-//       filterProjects(state, action).start_date = action.payload.start_date;
-//       filterProjects(state, action).salary = action.payload.salary;
-//       filterProjects(state, action).status = action.payload.status;
-
-//       return {
-//         ...state,
-//         projects: !isEqual(state.projects, action.payload) ? [...state.projects.filter((project) => project.id !== action.payload.id), action.payload]
-//           : [...state.projects, action.payload],
-//       };
-//     case projectAdded:
-//       return {
-//         ...state,
-//         projects: [...state.projects, action.payload],
-//       };
-//     default: return state;
-//   }
-// };
+export const { addProject, editProject, deleteProject } = projectsSlice.actions;
+export default projectsSlice.reducer;
