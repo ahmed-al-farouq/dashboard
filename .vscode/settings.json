@@ -1,0 +1,21 @@
+{
+  "workbench.settings.editor": "json",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "comment",
+        "settings": {
+          "fontStyle": "italic",
+          "foreground": "#C69650",
+        }
+      },
+      {
+        "scope": "comment.block.documentation",
+        "settings": {
+          "fontStyle": "italic",
+          "foreground": "#fefefe",
+        }
+      }
+    ]
+  },
+}
