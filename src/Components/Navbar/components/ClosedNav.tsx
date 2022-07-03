@@ -6,9 +6,9 @@ import { BsFillPeopleFill } from 'react-icons/bs';
 import { CgProfile } from 'react-icons/cg';
 import { BiLogOut } from 'react-icons/bi';
 
-const CloseNav = React.forwardRef((props, ref: React.Ref<HTMLUListElement>) => {
+const ClosedNav = React.forwardRef((props, ref: React.Ref<HTMLUListElement>) => {
   return (
-    <ul className="nav flex-column closen-nav" ref={ref}>
+    <ul className="nav flex-column closed-nav" ref={ref}>
       <li className="nav-item">
         <a href="/" className="nav-link">
           <AiFillDashboard title="Dashboard" />
@@ -38,4 +38,4 @@ const CloseNav = React.forwardRef((props, ref: React.Ref<HTMLUListElement>) => {
   );
 });
 
-export default CloseNav;
+export default ClosedNav;

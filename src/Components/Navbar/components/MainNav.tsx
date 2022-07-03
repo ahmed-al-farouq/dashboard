@@ -16,7 +16,7 @@ const MainNav = React.forwardRef((
   ref: React.Ref<HTMLUListElement>
   ) => {
   return (
-    <ul className={`nav nav-pills flex-column fs-6 mt-4 align-self-center ${props.hiddenClass}`} ref={ref}>
+    <ul className={`nav nav-pills flex-column fs-6 mt-5 align-self-center ${props.hiddenClass}`} ref={ref}>
       <li
         className="nav-item my-2"
       >

@@ -81,11 +81,11 @@ nav.close .close-icon {
   opacity: 0;
 }
 
-nav.close .nav.closen-nav {
+nav.close .nav.closed-nav {
   top: 50px;
 }
 
-nav.close .nav.closen-nav .nav-item .nav-link svg {
+nav.close .nav.closed-nav .nav-item .nav-link svg {
   font-size: 22px;
   margin: 15px 0;
 }

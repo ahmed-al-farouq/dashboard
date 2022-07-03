@@ -6,7 +6,7 @@ import { BiWorld } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 // Components
 import TogglerIcon from './components/TogglerIcon';
-import CloseNav from './components/CloseNav';
+import ClosedNav from './components/ClosedNav';
 import MainNav from './components/MainNav';
 
 function SideNavbar() {
@@ -45,14 +45,14 @@ function SideNavbar() {
       ref={navbarRef}
     >
       <TogglerIcon navbarToggle={navbarToggle} />
-      <div className="navbar-logo d-flex align-items-center justify-content-center" ref={logoRef}>
+      <div className="navbar-logo d-flex align-items-center justify-content-center hidden" ref={logoRef}>
         <BiWorld />
         <Link to="/" className="mb-0 mx-1">
           ALFAROUQ
         </Link>
       </div>
       <MainNav ref={mainNavRef} hiddenClass="hidden d-none" navbarToggle={navbarToggle} />
-      <CloseNav ref={closedNavRef} />
+      <ClosedNav ref={closedNavRef} />
     </nav>
   );
 }
