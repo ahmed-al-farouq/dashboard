@@ -11,7 +11,9 @@ export interface Employee {
 export interface Project {
   id: number;
   name: string;
+  clientName?: string;
   budget: string;
   deadLine: string;
-  whoWorksOnIt: string;
+  teamNum: number;
+  status?: string;
 }

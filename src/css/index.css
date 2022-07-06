@@ -161,3 +161,19 @@ a {
 }
 
 /* End Header */
+
+/* Start Base Alert */
+.base-alert {
+  top: -260px;
+  left: 30px;
+  width: 430px;
+  filter: drop-shadow(0 0 8px #ffffff20);
+}
+
+@media screen and (max-width: 992px) {
+  .base-alert {
+    position: static !important;
+    margin-top: 20px;
+    width: 90%;
+  }
+}

@@ -116,22 +116,24 @@
   z-index: 100;
   position: fixed;
   inset: 0;
-  background-color: rgba(255, 255, 255, 0.822);
+  background-color: rgba(255, 255, 255, 0.9);
   transition: 0.5s;
 }
 
 .pop-up-form svg {
   float: right;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 25px;
   margin: 20px;
-  color: rgba(0, 0, 0, 0.692);
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .pop-up-form form {
   width: 80%;
-  margin: auto;
-  transform: translateY(35%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border: 1px solid;
   border-radius: 20px;
   padding: 10px;

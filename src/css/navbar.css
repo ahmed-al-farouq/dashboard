@@ -21,8 +21,9 @@ nav .close-icon {
   color: rgb(202, 199, 199);
 }
 
-nav .navbar-logo a,
+nav .navbar-logo span,
 nav .navbar-logo svg {
+  cursor: pointer;
   letter-spacing: 2px;
   color: #007bff;
   font-size: 25px;

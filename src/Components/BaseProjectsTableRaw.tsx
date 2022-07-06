@@ -6,9 +6,10 @@ import { useAppDispatch } from "../redux/hooks";
 
 interface Props {
   project: Project;
+  all: boolean;
 }
 
-const BaseProjectsTableRaw = ({ project }: Props) => {
+const BaseProjectsTableRaw = ({ project, all }: Props) => {
   const nameInputRef = useRef<HTMLInputElement>(null);
   const [editable, setEditable] = useState(false);
   const dispatch = useAppDispatch();
@@ -30,6 +31,16 @@ const BaseProjectsTableRaw = ({ project }: Props) => {
           ref={nameInputRef}
         />
       </td>
+      {project.clientName && all && (
+        <td className="pe-2">
+          <input
+            type="text"
+            value={project.clientName}
+            disabled={!editable}
+            className="field"
+          />
+        </td>
+      )}
       <td className="pe-2">
         <input
           type="text"
@@ -49,11 +60,21 @@ const BaseProjectsTableRaw = ({ project }: Props) => {
       <td className="pe-2">
         <input
           type="text"
-          value={project.whoWorksOnIt}
+          value={project.teamNum}
           disabled={!editable}
           className="field text-ellipsis"
         />
       </td>
+      {project.status && all && (
+        <td className="pe-2">
+          <input
+            type="text"
+            value={project.status}
+            disabled={!editable}
+            className="field"
+          />
+        </td>
+      )}
       <td className="pe-2 d-flex align-items-center justify-content-center gap-3 h-full mt-3">
         <BiTrash
           type="button"

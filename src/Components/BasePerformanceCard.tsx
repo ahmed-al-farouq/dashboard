@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 // Icons
-import { AiOutlineArrowUp } from 'react-icons/ai';
+import { AiOutlineArrowUp } from "react-icons/ai";
 
 interface Props {
   title: String;
@@ -8,9 +8,15 @@ interface Props {
   icon: JSX.Element;
   incrementPercent: String;
   time: String;
-};
+}
 
-const BasePerformanceCard = ({ title, value, icon, incrementPercent: incrementPercent, time } : Props) => {
+const BasePerformanceCard = ({
+  title,
+  value,
+  icon,
+  incrementPercent: incrementPercent,
+  time,
+}: Props) => {
   return (
     <div className="card border-bottom border-info my-2">
       <div className="card-header bg-primary d-flex justify-content-between text-white">

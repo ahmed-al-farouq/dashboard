@@ -10,23 +10,47 @@ export const initialState: InitState = {
     {
       id: 0,
       name: 'Freeeze',
-      budget: '200$',
+      clientName: 'Client one',
+      budget: '100$',
       deadLine: '16/7/2021',
-      whoWorksOnIt: 'Ahmed Omar, Mohamed Omar',
+      teamNum: 3,
+      status: 'On Going'
     },
     {
       id: 1,
       name: 'For You My Country',
-      budget: '200$',
+      clientName: 'Client Two',
+      budget: '150$',
       deadLine: '16/7/2021',
-      whoWorksOnIt: 'Ahmed Omar, Omar Adel',
+      teamNum: 2,
+      status: 'Done'
     },
     {
       id: 2,
       name: 'Leader Dashboard',
+      clientName: 'Client Two',
       budget: '200$',
       deadLine: '16/7/2021',
-      whoWorksOnIt: 'Ahmed Omar, Omar Adel',
+      teamNum: 4,
+      status: 'On Going'
+    },
+    {
+      id: 3,
+      name: 'Credit Suite',
+      clientName: 'Client Two',
+      budget: '1000$',
+      deadLine: '16/7/2021',
+      teamNum: 5,
+      status: 'On Going'
+    },
+    {
+      id: 4,
+      name: 'Green Galaxy',
+      clientName: 'Client Two',
+      budget: '380$',
+      deadLine: '16/7/2021',
+      teamNum: 2,
+      status: 'On Going'
     },
   ],
 };

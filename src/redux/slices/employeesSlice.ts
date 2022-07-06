@@ -2,12 +2,10 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Employee } from '../../IFs';
 
 interface InitState {
-  navbarIsOpened: boolean;
   employees: Employee[];
 }
 
-export const initialState :  InitState = {
-  navbarIsOpened: false,
+export const initialState: InitState = {
   employees: [
     {
       id: 0,
@@ -35,7 +33,15 @@ export const initialState :  InitState = {
       start_date: '20/8/2020',
       salary: '7000$',
       status: 'Full-Time',
-
+    },
+    {
+      id: 3,
+      name: 'Omar Al-Farouq',
+      position: 'Front-End Developer',
+      age: "25",
+      start_date: '20/8/2020',
+      salary: '7000$',
+      status: 'Full-Time',
     },
   ],
 };

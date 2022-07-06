@@ -9,14 +9,16 @@ interface Props {
 
 const BaseAlert = ({ header, descLineOne, descLineTwo }: Props) => {
   return (
-    <section className="base-alert position-relative">
-      <p className="alert alert-primary position-absolute" role="alert">
-        <h3 className="alert-heading"> {header} </h3>
-        {descLineOne} <br />
+    <section className="base-alert alert alert-primary position-absolute" role="alert">
+      <h3 className="alert-heading"> {header} </h3>
+      <article>
+        <span className="d-block">{descLineOne}</span>
         {descLineTwo}
         <hr />
-        <b>Enjoy. <BsHeartFill /> </b>
-      </p>
+        <b>
+          Enjoy. <BsHeartFill />{" "}
+        </b>
+      </article>
     </section>
   );
 };

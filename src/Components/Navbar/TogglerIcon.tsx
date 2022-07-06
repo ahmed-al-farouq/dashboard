@@ -1,6 +1,6 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { AiFillCloseCircle } from 'react-icons/ai';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { AiFillCloseCircle } from "react-icons/ai";
 
 interface Props {
   navbarToggle(): void;
